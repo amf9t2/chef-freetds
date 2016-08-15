@@ -7,6 +7,10 @@ This file is used to list changes made in each version of freetds.
 * Update foodcritic (0.4.0) and rubocop (0.37.2)
 * Add Travis CI build on ruby 2.0, 2.2 & 2.3
 
+## 0.4.0 (2016-08-15):
+
+* Adding rhel conditional check to install freetds in package install mode for red hat platform
+
 ## 0.3.0 (2016-08-04):
 
 * Adding encryption attribute inside freetds conf template
