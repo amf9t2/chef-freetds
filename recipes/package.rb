@@ -24,12 +24,6 @@ when 'debian'
   node['freetds']['packages'].each do |pkg|
     package pkg
   end
-when 'rhel'
-  include_recipe 'yum::default'
-
-  node['freetds']['packages'].each do |pkg|
-    package pkg
-  end
 else
   raise 'Unsupported plaftorm, use the source install method'
 end
