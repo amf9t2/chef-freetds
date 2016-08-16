@@ -29,7 +29,7 @@ when 'rhel'
   yum_repository 'freetds' do
     description "freetds yum repository for RedHat"
     baseurl node['freetds']['url']
-    action :create
+    action :install
   end
 else
   raise 'Unsupported plaftorm, use the source install method'
