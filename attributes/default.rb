@@ -25,6 +25,8 @@ default['freetds']['tds_version']    = '7.1'
 default['freetds']['odbc']           = false
 default['freetds']['text_size']      = 64_512
 default['freetds']['client_charset'] = nil
+default['freetds']['encryption'] = 'off'
+default['freetds']['open_ssl_dir'] = '/usr/local/ssl'
 
 case node['freetds']['install_method']
 when 'package'
