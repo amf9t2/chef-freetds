@@ -20,12 +20,10 @@
 include_recipe 'build-essential::default'
 
 version = node['freetds']['version']
-encryption = (node['freetds']['encryption'] == 'require')
 
 freetds_url = node['freetds']['url'] ||
               "ftp://ftp.freetds.org/pub/freetds/stable/freetds-#{version}.tar.gz"
 configure_options = "--with-tdsver=#{node['freetds']['tds_version']} #{'--disable-odbc' unless node['freetds']['odbc']}"
-configure_options << "--with-openssl=#{node['freetds']['open_ssl_dir'] if encryption }"
 
 remote_file "#{Chef::Config[:file_cache_path]}/freetds-#{version}.tar.gz" do
   action :create_if_missing
